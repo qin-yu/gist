@@ -14,6 +14,11 @@
 2. With the setting of `[!htb]` you'll get the best results for figure placement
 3. Newline(s) between `subfigure` environment breaks side-by-side figures apart
 4. `#` has to be escaped, i.e. use `\#`, which is especially common in URLs
+5. The PDF bookmarks are a different thing than the table of contents. The bookmarks are not typeset by TeX: they simply are strings of characters, so no math or general formatting instructions are allowed. The easiest method to avoid the warnings is to use `\texorpdfstring`[[*]](https://tex.stackexchange.com/questions/53513/hyperref-token-not-allowed/53514):
+    ```latex
+    \subsubsection{Find an optimal \texorpdfstring{$\sigma$}{sigma}?}
+
+    ```
 
 ### To solve more than 26 subfigure index:
 ```latex
